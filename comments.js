@@ -35,6 +35,29 @@
 
   function closePopups(){ document.querySelectorAll('.annot-popup').forEach(function(p){ p.remove(); }); }
 
+  function openConfirmModal(opts){
+    opts = opts || {};
+    var ov = document.createElement('div');
+    ov.className = 'annot-ui annot-confirmmodal';
+    ov.style.cssText = 'position:fixed;inset:0;z-index:2147483645;background:rgba(22,35,58,.45);display:grid;place-items:center;font-family:Plus Jakarta Sans,system-ui,sans-serif;animation:annotpop .15s ease;';
+    var card = document.createElement('div');
+    card.style.cssText = 'width:320px;max-width:calc(100vw - 32px);background:#fff;border-radius:14px;box-shadow:0 24px 60px rgba(22,35,58,.3);padding:22px;animation:annotpop .2s cubic-bezier(.2,.8,.2,1);';
+    card.innerHTML =
+      '<div style="font:700 17px/1.2 Poppins,sans-serif;color:#16233a;margin-bottom:8px;">'+(opts.title||'Delete?')+'</div>'+
+      '<div style="font-size:13px;color:#6d7d90;line-height:1.55;margin-bottom:18px;">'+(opts.desc||'This action cannot be undone.')+'</div>'+
+      '<div style="display:flex;justify-content:flex-end;gap:10px;">'+
+        '<button class="annot-btn cf-cancel">Cancel</button>'+
+        '<button class="annot-btn danger cf-ok" style="background:#e0463b;border-color:#e0463b;color:#fff;">'+(opts.okLabel||'Delete')+'</button>'+
+      '</div>';
+    ov.appendChild(card); document.body.appendChild(ov);
+    function close(){ ov.remove(); }
+    ov.addEventListener('mousedown', function(e){ if(e.target===ov) close(); });
+    card.querySelector('.cf-cancel').onclick = close;
+    card.querySelector('.cf-ok').onclick = function(){ close(); if(opts.onConfirm) opts.onConfirm(); };
+    document.addEventListener('keydown', function esc(e){ if(e.key==='Escape'){ close(); document.removeEventListener('keydown', esc); } });
+    card.querySelector('.cf-ok').focus();
+  }
+
   function openNameModal(opts){
     opts = opts || {};
     var ov = document.createElement('div');
@@ -177,7 +200,7 @@
       '</div>';
     p.querySelector('.ac-close').onclick = closePopups;
     p.querySelector('.ac-resolve').onclick = function(){ store.update(c.id, { status: resolved?'open':'resolved', updatedMs:Date.now() }); closePopups(); };
-    p.querySelector('.ac-del').onclick = function(){ if(confirm('Delete this comment?')){ store.remove(c.id); closePopups(); } };
+    p.querySelector('.ac-del').onclick = function(){ openConfirmModal({ title:'Delete comment?', desc:'This comment and all its replies will be permanently deleted.', okLabel:'Delete', onConfirm:function(){ store.remove(c.id); closePopups(); } }); };
     p.querySelector('.ac-edit').onclick = function(){ renderEditView(p, c); };
     // add reply
     p.querySelector('.ac-reply-send').onclick = function(){
@@ -210,11 +233,12 @@
     }
     p.querySelectorAll('.ac-rdel').forEach(function(btn){
       btn.onclick = function(){
-        if(!confirm('Delete this reply?')) return;
         var rid = btn.getAttribute('data-rid');
-        var newReplies = replies.filter(function(r){ return r.id!==rid; });
-        applyLocal(c, { replies:newReplies, updatedMs:Date.now() });
-        Promise.resolve(store.update(c.id, { replies:newReplies, updatedMs:Date.now() })).then(function(){ renderThreadView(p, c); });
+        openConfirmModal({ title:'Delete reply?', desc:'This reply will be permanently deleted.', okLabel:'Delete', onConfirm:function(){
+          var newReplies = replies.filter(function(r){ return r.id!==rid; });
+          applyLocal(c, { replies:newReplies, updatedMs:Date.now() });
+          Promise.resolve(store.update(c.id, { replies:newReplies, updatedMs:Date.now() })).then(function(){ renderThreadView(p, c); });
+        }});
       };
     });
   }
