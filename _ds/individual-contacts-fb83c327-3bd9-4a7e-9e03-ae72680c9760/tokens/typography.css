@@ -1,0 +1,35 @@
+/* Trumpia — Typography tokens
+   SUBSTITUTION: real brand fonts unknown (Figma not reachable). The wordmark reads
+   as a rounded geometric sans → Poppins for display; Plus Jakarta Sans for UI/body.
+   Swap to the licensed faces once the style guide is available. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --font-display: 'Poppins', system-ui, -apple-system, sans-serif;
+  --font-body:    'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* Type scale */
+  --text-display: 40px;
+  --text-h1: 30px;
+  --text-h2: 24px;
+  --text-h3: 19px;
+  --text-lg: 17px;
+  --text-md: 15px;   /* base UI size */
+  --text-sm: 13px;
+  --text-xs: 12px;
+  --text-2xs: 11px;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+
+  --tracking-tight: -0.02em;
+  --tracking-snug: -0.01em;
+  --tracking-wide: 0.04em;
+}

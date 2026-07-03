@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1668E3"/><g fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M64 58v8a4 4 0 0 1-4.4 4 38 38 0 0 1-16.6-5.9 37 37 0 0 1-11.4-11.4A38 38 0 0 1 25.7 36 4 4 0 0 1 29.7 32h8a4 4 0 0 1 4 3.4 24 24 0 0 0 1.3 5.3 4 4 0 0 1-.9 4.2l-3.4 3.4a30 30 0 0 0 11.4 11.4l3.4-3.4a4 4 0 0 1 4.2-.9 24 24 0 0 0 5.3 1.3A4 4 0 0 1 64 58z"/></g></svg></template>
+<helmet>
+  <link rel="stylesheet" href="_ds/individual-contacts-fb83c327-3bd9-4a7e-9e03-ae72680c9760/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/individual-contacts-fb83c327-3bd9-4a7e-9e03-ae72680c9760/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/individual-contacts-fb83c327-3bd9-4a7e-9e03-ae72680c9760/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/individual-contacts-fb83c327-3bd9-4a7e-9e03-ae72680c9760/tokens/effects.css">
+  <style>
+    *{box-sizing:border-box;}
+    html,body{margin:0;}
+    body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#eef1f5;color:#2b3c54;-webkit-font-smoothing:antialiased;}
+    input{font-family:inherit;}
+    @keyframes ovfade{from{opacity:0;}}
+    @keyframes modpop{from{opacity:0;transform:translateY(8px) scale(.98);}}
+    @keyframes drawerin{from{transform:translateX(100%);}}
+    @keyframes drawerout{to{transform:translateX(100%);}}
+    @keyframes ovfadeout{to{opacity:0;}}
+    @keyframes spin{to{transform:rotate(360deg);}}
+    @keyframes ring{0%,60%,100%{transform:rotate(0);}5%,25%,45%{transform:rotate(-14deg);}15%,35%,55%{transform:rotate(14deg);}}
+    .row-hl:hover{background:#f1f5fb !important;}
+    .row-sel:hover{background:#dbe9ff !important;}
+    .tab-item:hover{color:#1668E3 !important;}
+    .tt-wrap{position:relative;display:inline-flex;}
+    .tt-wrap .tt-bubble{visibility:hidden;opacity:0;transition:opacity .15s;position:absolute;bottom:calc(100% + 9px);left:50%;transform:translateX(-50%);width:390px;background:#16233a;color:#fff;font-size:12.5px;font-weight:500;line-height:1.55;padding:10px 12px;border-radius:8px;box-shadow:0 8px 24px rgba(22,35,58,.28);z-index:50;text-align:left;white-space:normal;}
+    .tt-wrap .tt-bubble::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#16233a;}
+    .tt-wrap:hover .tt-bubble{visibility:visible;opacity:1;}
+    @keyframes toastup{from{opacity:0;transform:translateY(12px);}}
+    @keyframes annotpop{from{opacity:0;transform:translateY(6px) scale(.97);}}
+    .annot-pin{position:absolute;transform:translate(-50%,-100%);cursor:pointer;z-index:2147482000;}
+    .annot-pin:hover{filter:brightness(1.05);}
+    .annot-btn{border:1px solid #d6dde6;background:#fff;border-radius:7px;font-family:inherit;font-size:13px;font-weight:600;color:#16233a;cursor:pointer;padding:8px 12px;transition:background .12s;}
+    .annot-btn:hover{background:#f1f5fb;}
+    .annot-btn.pri{background:#1668E3;border-color:#1668E3;color:#fff;}
+    .annot-btn.pri:hover{background:#1257bf;}
+    .annot-btn.danger{color:#b3271c;}
+    .annot-btn.danger:hover{background:#fdecea;}
+    .ac-reply:hover .ac-ractions{opacity:1 !important;}
+    .ac-main:hover .ac-mactions{opacity:1 !important;}
+    .ac-mode:not(.active):hover{background:#eef1f5 !important;border-color:#eef1f5 !important;}
+  </style>
+  <script src="comments.js"></script>
+</helmet>
+<div style="min-height:100vh;min-width:1320px;background:#eef1f5;">
+  <!-- White header zone -->
+  <div style="background:#fff;padding:12px 40px 0;position:sticky;top:0;z-index:40;">
+    <div style="display:flex;align-items:center;gap:9px;font-size:14px;color:#6d7d90;">
+      <span>Settings</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b9c3cf" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      <span>Account Settings</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b9c3cf" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin:18px 0 26px;">
+      <h1 style="font-family:'Poppins',sans-serif;font-size:30px;font-weight:500;color:#16233a;letter-spacing:-.02em;margin:0;line-height:1.1;">{{ pageTitle }}</h1>
+      <sc-if value="{{ isOrg }}" hint-placeholder-val="{{ false }}">
+        <button style="display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 22px;border:1px solid #1668E3;background:#1668E3;border-radius:6px;font-family:inherit;font-size:14px;font-weight:600;color:#fff;cursor:pointer;flex:0 0 auto;">Edit</button>
+      </sc-if>
+    </div>
+    <!-- Tab bar -->
+    <div style="display:flex;align-items:flex-end;border-top:1px solid #e4e9ef;border-bottom:1px solid #e4e9ef;margin:0 -40px;">
+      <sc-for list="{{ tabs }}" as="tab" hint-placeholder-count="7">
+        <div class="tab-item" onClick="{{ tab.onClick }}" style="{{ tab.style }}">{{ tab.label }}</div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- Content zone -->
+  <div style="padding:28px 25px 48px;">
+    <sc-if value="{{ isTableView }}" hint-placeholder-val="{{ true }}">
+      <div style="background:#fff;border:1px solid #e4e9ef;border-radius:6px;box-shadow:0 1px 3px rgba(22,35,58,.06);overflow:hidden;">
+        <!-- Card header -->
+        <div style="display:flex;align-items:baseline;gap:18px;padding:22px 26px;flex-wrap:wrap;">
+          <h2 style="font-family:'Poppins',sans-serif;font-size:19px;font-weight:700;color:#16233a;margin:0;white-space:nowrap;">{{ cardTitle }}</h2>
+          <p style="margin:0;font-size:14px;color:#51606f;line-height:1.5;flex:1;min-width:240px;">{{ cardDesc }}</p>
+        </div>
+        <div style="height:1px;background:#eef1f5;"></div>
+
+        <!-- List label -->
+        <div style="display:flex;align-items:center;gap:16px;padding:22px 26px 16px;">
+          <span style="display:flex;align-items:center;gap:9px;font-size:15px;font-weight:600;color:#2b3c54;">
+            <span style="width:5px;height:5px;border-radius:50%;background:#51606f;"></span>{{ listLabel }}
+          </span>
+        </div>
+
+        <!-- Table container -->
+        <div style="margin:0 26px 8px;border:1px solid #e4e9ef;border-radius:6px;overflow:hidden;">
+          <!-- Toolbar -->
+          <div style="display:flex;align-items:center;gap:18px;padding:13px 18px;border-bottom:1px solid #eef1f5;flex-wrap:wrap;">
+            <span style="font-size:14px;color:#51606f;"><b style="color:#16233a;font-weight:700;">{{ selCount }}</b> selected</span>
+            <span style="width:1px;height:18px;background:#e4e9ef;"></span>
+            <button onClick="{{ openAdd }}" style="display:inline-flex;align-items:center;gap:8px;border:none;background:none;font-family:inherit;font-size:14px;cursor:pointer;color:#1668E3;">
+              <span style="width:24px;height:24px;display:grid;place-items:center;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+              </span>Add
+            </button>
+            <button onClick="{{ onDelete }}" style="display:inline-flex;align-items:center;gap:8px;border:none;background:none;font-family:inherit;font-size:14px;cursor:pointer;color:{{ actionColor }};">
+              <span style="width:24px;height:24px;display:grid;place-items:center;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              </span>Delete
+            </button>
+            <div style="flex:1;"></div>
+            <div style="position:relative;width:192px;max-width:42%;">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a2b3" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <input value="{{ query }}" onInput="{{ onQuery }}" placeholder="Search" style="width:100%;height:36px;border:1px solid #d6dde6;border-radius:999px;background:#fff;padding:0 38px 0 38px;font-size:13px;color:#16233a;outline:none;">
+              <svg style="position:absolute;right:12px;top:50%;transform:translateY(-50%);" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a2b3" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+          </div>
+
+          <!-- Header row -->
+          <div style="overflow-x:auto;">
+          <div style="display:flex;align-items:center;background:#f6f8fa;border-bottom:1px solid #e4e9ef;width:max-content;min-width:100%;">
+            <div style="flex:0 0 56px;padding-left:20px;">
+              <input type="checkbox" checked="{{ allChecked }}" ref="{{ headRef }}" onChange="{{ onToggleAll }}" style="width:18px;height:18px;accent-color:#1668E3;cursor:pointer;vertical-align:middle;">
+            </div>
+            <div style="flex:0 0 auto;width:{{ wPrimary }};position:relative;padding:14px 16px;font-size:15px;font-weight:700;color:#16233a;border-left:1px solid #e4e9ef;white-space:nowrap;overflow:visible;">{{ firstColLabel }}<span onMouseDown="{{ rz.primary }}" style="position:absolute;top:0;right:-5px;width:10px;height:100%;cursor:col-resize;z-index:3;"></span></div>
+            <div style="flex:0 0 auto;width:{{ wStatus }};position:relative;padding:14px 16px;font-size:15px;font-weight:700;color:#16233a;border-left:1px solid #e4e9ef;white-space:nowrap;overflow:visible;">Status<span onMouseDown="{{ rz.status }}" style="position:absolute;top:0;right:-5px;width:10px;height:100%;cursor:col-resize;z-index:3;"></span></div>
+            <div style="flex:0 0 auto;width:{{ wUpdated }};position:relative;padding:14px 16px;font-size:15px;font-weight:700;color:#16233a;border-left:1px solid #e4e9ef;white-space:nowrap;overflow:visible;">Updated By<span onMouseDown="{{ rz.updated }}" style="position:absolute;top:0;right:-5px;width:10px;height:100%;cursor:col-resize;z-index:3;"></span></div>
+            <div style="flex:0 0 auto;width:{{ wDate }};position:relative;padding:14px 16px;font-size:15px;font-weight:700;color:#16233a;border-left:1px solid #e4e9ef;white-space:nowrap;overflow:visible;">Date Added<span onMouseDown="{{ rz.date }}" style="position:absolute;top:0;right:-5px;width:10px;height:100%;cursor:col-resize;z-index:3;"></span></div>
+            <div style="flex:0 0 150px;padding:14px 16px;font-size:15px;font-weight:700;color:#16233a;border-left:1px solid #e4e9ef;">Set Default</div>
+          </div>
+
+          <!-- Rows -->
+          <sc-for list="{{ rows }}" as="row" hint-placeholder-count="3">
+            <div class="{{ row.rowCls }}" style="{{ row.rowStyle }}">
+              <div style="flex:0 0 56px;padding-left:20px;">
+                <input type="checkbox" checked="{{ row.selected }}" onChange="{{ row.onSelect }}" style="width:18px;height:18px;accent-color:#1668E3;cursor:pointer;vertical-align:middle;">
+              </div>
+              <div style="flex:0 0 auto;width:{{ wPrimary }};padding:16px;font-size:15px;color:#2b3c54;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ row.primary }}</div>
+              <div style="flex:0 0 auto;width:{{ wStatus }};padding:16px;font-size:15px;font-weight:500;color:{{ row.statusColor }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ row.status }}</div>
+              <div style="flex:0 0 auto;width:{{ wUpdated }};padding:16px;font-size:15px;color:#51606f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ row.updatedBy }}</div>
+              <div style="flex:0 0 auto;width:{{ wDate }};padding:16px;font-size:15px;color:#51606f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ row.dateAdded }}</div>
+              <div style="flex:0 0 150px;padding:16px;">
+                <span onClick="{{ row.onToggleDefault }}" style="display:inline-block;width:40px;height:23px;border-radius:999px;position:relative;cursor:pointer;transition:background .2s;background:{{ row.trackBg }};">
+                  <span style="position:absolute;top:2px;left:2px;width:19px;height:19px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .2s;transform:{{ row.knobTf }};"></span>
+                </span>
+              </div>
+            </div>
+          </sc-for>
+          </div>
+
+          <!-- Footer -->
+          <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:14px 18px;border-top:1px solid #e4e9ef;background:#fff;font-size:14px;color:#6d7d90;">
+            <div style="justify-self:start;position:relative;display:inline-flex;align-items:center;">
+              <select style="appearance:none;height:34px;padding:0 34px 0 12px;border:1px solid #d6dde6;border-radius:5px;background:#fff;color:#16233a;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;outline:none;">
+                <option>15</option><option>25</option><option>50</option><option>100</option>
+              </select>
+              <svg style="position:absolute;right:10px;pointer-events:none;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6d7d90" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;justify-self:center;">
+              <button style="min-width:32px;height:32px;border:1px solid #e4e9ef;background:#fff;border-radius:5px;color:#b9c3cf;display:grid;place-items:center;cursor:not-allowed;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m11 17-5-5 5-5"/><path d="m18 17-5-5 5-5"/></svg></button>
+              <button style="min-width:32px;height:32px;border:1px solid #e4e9ef;background:#fff;border-radius:5px;color:#b9c3cf;display:grid;place-items:center;cursor:not-allowed;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
+              <button style="min-width:32px;height:32px;border:1px solid #1668E3;background:#fff;border-radius:5px;color:#1668E3;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;">1</button>
+              <button style="min-width:32px;height:32px;border:1px solid #e4e9ef;background:#fff;border-radius:5px;color:#b9c3cf;display:grid;place-items:center;cursor:not-allowed;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
+              <button style="min-width:32px;height:32px;border:1px solid #e4e9ef;background:#fff;border-radius:5px;color:#b9c3cf;display:grid;place-items:center;cursor:not-allowed;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg></button>
+            </div>
+            <div style="justify-self:end;display:flex;align-items:center;gap:8px;white-space:nowrap;">
+              <span>Go to Page:</span>
+              <input value="1" style="width:48px;height:34px;text-align:center;border:1px solid #d6dde6;border-radius:5px;font-family:inherit;font-size:13px;color:#16233a;outline:none;">
+              <span style="color:#b9c3cf;">/ 1</span>
+            </div>
+          </div>
+        </div>
+        <div style="height:10px;"></div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isVerified }}" hint-placeholder-val="{{ false }}">
+      <div style="height:22px;"></div>
+      <div style="background:#fff;border:1px solid #e4e9ef;border-radius:6px;box-shadow:0 1px 3px rgba(22,35,58,.06);overflow:hidden;">
+        <!-- Card header -->
+        <div style="display:flex;align-items:baseline;gap:18px;padding:22px 26px;flex-wrap:wrap;">
+          <h2 style="font-family:'Poppins',sans-serif;font-size:19px;font-weight:700;color:#16233a;margin:0;white-space:nowrap;">Mobile Numbers</h2>
+          <p style="margin:0;font-size:14px;color:#51606f;line-height:1.5;flex:1;min-width:240px;">In order to use your mobile number, you need to verify it first. Once verified, it can be used to receive workflow alerts, etc.</p>
+        </div>
+        <div style="height:1px;background:#eef1f5;"></div>
+
+        <!-- List label -->
+        <div style="display:flex;align-items:center;gap:16px;padding:22px 26px 16px;">
+          <span style="display:flex;align-items:center;gap:9px;font-size:15px;font-weight:600;color:#2b3c54;">
+            <span style="width:5px;height:5px;border-radius:50%;background:#51606f;"></span>Mobile Number List
+          </span>
+        </div>
+
+        <!-- Table container -->
+        <div style="margin:0 26px 8px;border:1px solid #e4e9ef;border-radius:6px;overflow:hidden;">
+          <!-- Toolbar -->
+          <div style="display:flex;align-items:center;gap:18px;padding:13px 18px;border-bottom:1px solid #eef1f5;flex-wrap:wrap;">
+            <span style="font-size:14px;color:#51606f;"><b style="color:#16233a;font-weight:700;">{{ mobSelCount }}</b> selected</span>
+            <span style="width:1px;height:18px;background:#e4e9ef;"></span>
+            <button onClick="{{ mobOpenAdd }}" style="display:inline-flex;align-items:center;gap:8px;border:none;background:none;font-family:inherit;font-size:14px;cursor:pointer;color:#1668E3;">
+              <span style="width:24px;height:24px;display:grid;place-items:center;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+              </span>Add
+            </button>
+            <button onClick="{{ mobDelete }}" style="display:inline-flex;align-items:center;gap:8px;border:none;background:none;font-family:inherit;font-size:14px;cursor:pointer;color:{{ mobActionColor }};">
+              <span style="width:24px;height:24px;display:grid;place-items:center;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              </span>Delete
+            </button>
+            <div style="flex:1;"></div>
+            <div style="position:relative;width:192px;max-width:42%;">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a2b3" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <input value="{{ mobQuery }}" onInput="{{ mobOnQuery }}" placeholder="Search" style="width:100%;height:36px;border:1px solid #d6dde6;border-radius:999px;background:#fff;padding:0 38px 0 38px;font-size:13px;color:#16233a;outline:none;">
+              <svg style="position:absolute;right:12px;top:50%;transform:translateY(-50%);" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a2b3" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+          </div>
+
+          <!-- Header row -->
+          <div style="overflow-x:auto;">
+          <div style="display:flex;align-items:center;background:#f6f8fa;border-bottom:1px solid #e4e9ef;width:max-content;min-width:100%;">
+            <div style="flex:0 0 56px;padding-left:20px;">
+              <input type="checkbox" checked="{{ mobAllChecked }}" ref="{{ mobHeadRef }}" onChange="{{ mobToggleAll }}" style="width:18px;height:18px;accent-color:#1668E3;cursor:pointer;vertical-align:middle;">
+            </div>
+            <div style="flex:0 0 auto;width:{{ mwPrimary }};position:relative;padding:14px 16px;font-size:15px;font-weight:700;color:#16233a;border-left:1px solid #e4e9ef;white-space:nowrap;overflow:visible;">Mobile Number<span onMouseDown="{{ mrz.primary }}" style="position:absolute;top:0;right:-5px;width:10px;height:100%;cursor:col-resize;z-index:3;"></span></div>
+            <div style="flex:0 0 auto;width:{{ mwStatus }};position:relative;padding:14px 16px;font-size:15px;font-weight:700;color:#16233a;border-left:1px solid #e4e9ef;white-space:nowrap;overflow:visible;">Status<span onMouseDown="{{ mrz.status }}" style="position:absolute;top:0;right:-5px;width:10px;height:100%;cursor:col-resize;z-index:3;"></span></div>
+            <div style="flex:0 0 auto;width:{{ mwUpdated }};position:relative;padding:14px 16px;font-size:15px;font-weight:700;color:#16233a;border-left:1px solid #e4e9ef;white-space:nowrap;overflow:visible;">Updated By<span onMouseDown="{{ mrz.updated }}" style="position:absolute;top:0;right:-5px;width:10px;height:100%;cursor:col-resize;z-index:3;"></span></div>
+            <div style="flex:0 0 auto;width:{{ mwDate }};position:relative;padding:14px 16px;font-size:15px;font-weight:700;color:#16233a;border-left:1px solid #e4e9ef;white-space:nowrap;overflow:visible;">Date Added<span onMouseDown="{{ mrz.date }}" style="position:absolute;top:0;right:-5px;width:10px;height:100%;cursor:col-resize;z-index:3;"></span></div>
+            <div style="flex:0 0 150px;padding:14px 16px;font-size:15px;font-weight:700;color:#16233a;border-left:1px solid #e4e9ef;">Set Default</div>
+          </div>
+
+          <!-- Rows -->
+          <sc-for list="{{ mobRows }}" as="row" hint-placeholder-count="3">
+            <div class="{{ row.rowCls }}" style="{{ row.rowStyle }}">
+              <div style="flex:0 0 56px;padding-left:20px;">
+                <input type="checkbox" checked="{{ row.selected }}" onChange="{{ row.onSelect }}" style="width:18px;height:18px;accent-color:#1668E3;cursor:pointer;vertical-align:middle;">
+              </div>
+              <div style="flex:0 0 auto;width:{{ mwPrimary }};padding:16px;font-size:15px;color:#2b3c54;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ row.primary }}</div>
+              <div style="flex:0 0 auto;width:{{ mwStatus }};padding:16px;font-size:15px;font-weight:500;color:{{ row.statusColor }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ row.status }}</div>
+              <div style="flex:0 0 auto;width:{{ mwUpdated }};padding:16px;font-size:15px;color:#51606f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ row.updatedBy }}</div>
+              <div style="flex:0 0 auto;width:{{ mwDate }};padding:16px;font-size:15px;color:#51606f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ row.dateAdded }}</div>
+              <div style="flex:0 0 150px;padding:16px;">
+                <span onClick="{{ row.onToggleDefault }}" style="display:inline-block;width:40px;height:23px;border-radius:999px;position:relative;cursor:pointer;transition:background .2s;background:{{ row.trackBg }};">
+                  <span style="position:absolute;top:2px;left:2px;width:19px;height:19px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .2s;transform:{{ row.knobTf }};"></span>
+                </span>
+              </div>
+            </div>
+          </sc-for>
+          </div>
+
+          <!-- Footer -->
+          <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:14px 18px;border-top:1px solid #e4e9ef;background:#fff;font-size:14px;color:#6d7d90;">
+            <div style="justify-self:start;position:relative;display:inline-flex;align-items:center;">
+              <select style="appearance:none;height:34px;padding:0 34px 0 12px;border:1px solid #d6dde6;border-radius:5px;background:#fff;color:#16233a;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;outline:none;">
+                <option>15</option><option>25</option><option>50</option><option>100</option>
+              </select>
+              <svg style="position:absolute;right:10px;pointer-events:none;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6d7d90" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;justify-self:center;">
+              <button style="min-width:32px;height:32px;border:1px solid #e4e9ef;background:#fff;border-radius:5px;color:#b9c3cf;display:grid;place-items:center;cursor:not-allowed;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m11 17-5-5 5-5"/><path d="m18 17-5-5 5-5"/></svg></button>
+              <button style="min-width:32px;height:32px;border:1px solid #e4e9ef;background:#fff;border-radius:5px;color:#b9c3cf;display:grid;place-items:center;cursor:not-allowed;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
+              <button style="min-width:32px;height:32px;border:1px solid #1668E3;background:#fff;border-radius:5px;color:#1668E3;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;">1</button>
+              <button style="min-width:32px;height:32px;border:1px solid #e4e9ef;background:#fff;border-radius:5px;color:#b9c3cf;display:grid;place-items:center;cursor:not-allowed;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
+              <button style="min-width:32px;height:32px;border:1px solid #e4e9ef;background:#fff;border-radius:5px;color:#b9c3cf;display:grid;place-items:center;cursor:not-allowed;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg></button>
+            </div>
+            <div style="justify-self:end;display:flex;align-items:center;gap:8px;white-space:nowrap;">
+              <span>Go to Page:</span>
+              <input value="1" style="width:48px;height:34px;text-align:center;border:1px solid #d6dde6;border-radius:5px;font-family:inherit;font-size:13px;color:#16233a;outline:none;">
+              <span style="color:#b9c3cf;">/ 1</span>
+            </div>
+          </div>
+        </div>
+        <div style="height:10px;"></div>
+      </div>
+
+      <div style="height:22px;"></div>
+      <div style="background:#fff;border:1px solid #e4e9ef;border-radius:6px;box-shadow:0 1px 3px rgba(22,35,58,.06);overflow:hidden;">
+        <!-- Card header -->
+        <div style="display:flex;align-items:baseline;gap:18px;padding:22px 26px;flex-wrap:wrap;">
+          <h2 style="font-family:'Poppins',sans-serif;font-size:19px;font-weight:700;color:#16233a;margin:0;white-space:nowrap;">Caller ID</h2>
+          <p style="margin:0;font-size:14px;color:#51606f;line-height:1.5;flex:1;min-width:240px;">Select a verified caller ID to use for all outbound voice calls.</p>
+        </div>
+        <div style="height:1px;background:#eef1f5;"></div>
+
+        <!-- List label -->
+        <div style="display:flex;align-items:center;gap:16px;padding:22px 26px 16px;">
+          <span style="display:flex;align-items:center;gap:9px;font-size:15px;font-weight:600;color:#2b3c54;">
+            <span style="width:5px;height:5px;border-radius:50%;background:#51606f;"></span>Caller ID List
+          </span>
+        </div>
+
+        <!-- Table container -->
+        <div style="margin:0 26px 8px;border:1px solid #e4e9ef;border-radius:6px;overflow:hidden;">
+          <!-- Toolbar -->
+          <div style="display:flex;align-items:center;gap:18px;padding:13px 18px;border-bottom:1px solid #eef1f5;flex-wrap:wrap;">
+            <span style="font-size:14px;color:#51606f;"><b style="color:#16233a;font-weight:700;">{{ phSelCount }}</b> selected</span>
+            <span style="width:1px;height:18px;background:#e4e9ef;"></span>
+            <button onClick="{{ phOpenAdd }}" style="display:inline-flex;align-items:center;gap:8px;border:none;background:none;font-family:inherit;font-size:14px;cursor:pointer;color:#1668E3;">
+              <span style="width:24px;height:24px;display:grid;place-items:center;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+              </span>Add
+            </button>
+            <button onClick="{{ phDelete }}" style="display:inline-flex;align-items:center;gap:8px;border:none;background:none;font-family:inherit;font-size:14px;cursor:pointer;color:{{ phActionColor }};">
+              <span style="width:24px;height:24px;display:grid;place-items:center;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              </span>Delete
+            </button>
+            <div style="flex:1;"></div>
+            <div style="position:relative;width:192px;max-width:42%;">
+              <svg style="position:absolute;left:12px;top:50%;transform:translateY(-50%);" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a2b3" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <input value="{{ phQuery }}" onInput="{{ phOnQuery }}" placeholder="Search" style="width:100%;height:36px;border:1px solid #d6dde6;border-radius:999px;background:#fff;padding:0 38px 0 38px;font-size:13px;color:#16233a;outline:none;">
+              <svg style="position:absolute;right:12px;top:50%;transform:translateY(-50%);" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a2b3" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+          </div>
+
+          <!-- Header row -->
+          <div style="overflow-x:auto;">
+          <div style="display:flex;align-items:center;background:#f6f8fa;border-bottom:1px solid #e4e9ef;width:max-content;min-width:100%;">
+            <div style="flex:0 0 56px;padding-left:20px;">
+              <input type="checkbox" checked="{{ phAllChecked }}" ref="{{ phHeadRef }}" onChange="{{ phToggleAll }}" style="width:18px;height:18px;accent-color:#1668E3;cursor:pointer;vertical-align:middle;">
+            </div>
+            <div style="flex:0 0 auto;width:{{ pwPrimary }};position:relative;padding:14px 16px;font-size:15px;font-weight:700;color:#16233a;border-left:1px solid #e4e9ef;white-space:nowrap;overflow:visible;">Phone Number<span onMouseDown="{{ prz.primary }}" style="position:absolute;top:0;right:-5px;width:10px;height:100%;cursor:col-resize;z-index:3;"></span></div>
+            <div style="flex:0 0 auto;width:{{ pwStatus }};position:relative;padding:14px 16px;font-size:15px;font-weight:700;color:#16233a;border-left:1px solid #e4e9ef;white-space:nowrap;overflow:visible;">Status<span onMouseDown="{{ prz.status }}" style="position:absolute;top:0;right:-5px;width:10px;height:100%;cursor:col-resize;z-index:3;"></span></div>
+            <div style="flex:0 0 auto;width:{{ pwUpdated }};position:relative;padding:14px 16px;font-size:15px;font-weight:700;color:#16233a;border-left:1px solid #e4e9ef;white-space:nowrap;overflow:visible;">Updated By<span onMouseDown="{{ prz.updated }}" style="position:absolute;top:0;right:-5px;width:10px;height:100%;cursor:col-resize;z-index:3;"></span></div>
+            <div style="flex:0 0 auto;width:{{ pwDate }};position:relative;padding:14px 16px;font-size:15px;font-weight:700;color:#16233a;border-left:1px solid #e4e9ef;white-space:nowrap;overflow:visible;">Date Added<span onMouseDown="{{ prz.date }}" style="position:absolute;top:0;right:-5px;width:10px;height:100%;cursor:col-resize;z-index:3;"></span></div>
+            <div style="flex:0 0 150px;padding:14px 16px;font-size:15px;font-weight:700;color:#16233a;border-left:1px solid #e4e9ef;">Set Default</div>
+          </div>
+
+          <!-- Rows -->
+          <sc-for list="{{ phRows }}" as="row" hint-placeholder-count="3">
+            <div class="{{ row.rowCls }}" style="{{ row.rowStyle }}">
+              <div style="flex:0 0 56px;padding-left:20px;">
+                <input type="checkbox" checked="{{ row.selected }}" onChange="{{ row.onSelect }}" style="width:18px;height:18px;accent-color:#1668E3;cursor:pointer;vertical-align:middle;">
+              </div>
+              <div style="flex:0 0 auto;width:{{ pwPrimary }};padding:16px;font-size:15px;color:#2b3c54;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ row.primary }}</div>
+              <div style="flex:0 0 auto;width:{{ pwStatus }};padding:16px;font-size:15px;font-weight:500;color:{{ row.statusColor }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ row.status }}</div>
+              <div style="flex:0 0 auto;width:{{ pwUpdated }};padding:16px;font-size:15px;color:#51606f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ row.updatedBy }}</div>
+              <div style="flex:0 0 auto;width:{{ pwDate }};padding:16px;font-size:15px;color:#51606f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ row.dateAdded }}</div>
+              <div style="flex:0 0 150px;padding:16px;">
+                <span onClick="{{ row.onToggleDefault }}" style="display:inline-block;width:40px;height:23px;border-radius:999px;position:relative;cursor:pointer;transition:background .2s;background:{{ row.trackBg }};">
+                  <span style="position:absolute;top:2px;left:2px;width:19px;height:19px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .2s;transform:{{ row.knobTf }};"></span>
+                </span>
+              </div>
+            </div>
+          </sc-for>
+          </div>
+
+          <!-- Footer -->
+          <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:14px 18px;border-top:1px solid #e4e9ef;background:#fff;font-size:14px;color:#6d7d90;">
+            <div style="justify-self:start;position:relative;display:inline-flex;align-items:center;">
+              <select style="appearance:none;height:34px;padding:0 34px 0 12px;border:1px solid #d6dde6;border-radius:5px;background:#fff;color:#16233a;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer;outline:none;">
+                <option>15</option><option>25</option><option>50</option><option>100</option>
+              </select>
+              <svg style="position:absolute;right:10px;pointer-events:none;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6d7d90" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;justify-self:center;">
+              <button style="min-width:32px;height:32px;border:1px solid #e4e9ef;background:#fff;border-radius:5px;color:#b9c3cf;display:grid;place-items:center;cursor:not-allowed;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m11 17-5-5 5-5"/><path d="m18 17-5-5 5-5"/></svg></button>
+              <button style="min-width:32px;height:32px;border:1px solid #e4e9ef;background:#fff;border-radius:5px;color:#b9c3cf;display:grid;place-items:center;cursor:not-allowed;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
+              <button style="min-width:32px;height:32px;border:1px solid #1668E3;background:#fff;border-radius:5px;color:#1668E3;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;">1</button>
+              <button style="min-width:32px;height:32px;border:1px solid #e4e9ef;background:#fff;border-radius:5px;color:#b9c3cf;display:grid;place-items:center;cursor:not-allowed;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
+              <button style="min-width:32px;height:32px;border:1px solid #e4e9ef;background:#fff;border-radius:5px;color:#b9c3cf;display:grid;place-items:center;cursor:not-allowed;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg></button>
+            </div>
+            <div style="justify-self:end;display:flex;align-items:center;gap:8px;white-space:nowrap;">
+              <span>Go to Page:</span>
+              <input value="1" style="width:48px;height:34px;text-align:center;border:1px solid #d6dde6;border-radius:5px;font-family:inherit;font-size:13px;color:#16233a;outline:none;">
+              <span style="color:#b9c3cf;">/ 1</span>
+            </div>
+          </div>
+        </div>
+        <div style="height:10px;"></div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isOrg }}" hint-placeholder-val="{{ false }}">
+      <!-- Shared Information -->
+      <div style="background:#fff;border:1px solid #e4e9ef;border-radius:6px;box-shadow:0 1px 3px rgba(22,35,58,.06);overflow:hidden;margin-bottom:22px;">
+        <div style="display:flex;align-items:baseline;gap:18px;padding:22px 30px;flex-wrap:wrap;border-bottom:1px solid #eef1f5;">
+          <h2 style="font-family:'Poppins',sans-serif;font-size:19px;font-weight:700;color:#16233a;margin:0;white-space:nowrap;">Shared Information</h2>
+          <p style="margin:0;font-size:14px;color:#6d7d90;line-height:1.5;">Shared Information will be visible to your customers.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;">
+          <div style="padding:26px 40px;display:flex;flex-direction:column;gap:26px;border-right:1px solid #eef1f5;">
+            <div>
+              <div style="display:flex;align-items:center;gap:7px;font-size:14px;color:#6d7d90;"><span style="width:4px;height:4px;border-radius:50%;background:#9aa7b5;flex:0 0 auto;"></span>Organization Name (Shown at beginning of texts)<span class="tt-wrap" style="color:#1668E3;cursor:help;vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="#1668E3"/><rect x="11" y="10.5" width="2" height="6" rx="1" fill="#fff"/><circle cx="12" cy="7.5" r="1.2" fill="#fff"/></svg><span class="tt-bubble" style="width:420px;">Your Organization Name will be included at the start of each message to help customers identify that a text is directly from you.</span></span></div>
+              <div style="font-size:16px;font-weight:700;color:#2b3c54;margin-top:9px;padding-left:11px;">sad</div>
+            </div>
+            <div>
+              <div style="display:flex;align-items:center;gap:7px;font-size:14px;color:#6d7d90;"><span style="width:4px;height:4px;border-radius:50%;background:#9aa7b5;flex:0 0 auto;"></span>Organization Contact Number (Landline/Mobile)<span class="tt-wrap" style="color:#1668E3;cursor:help;vertical-align:middle;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="#1668E3"/><rect x="11" y="10.5" width="2" height="6" rx="1" fill="#fff"/><circle cx="12" cy="7.5" r="1.2" fill="#fff"/></svg><span class="tt-bubble" style="width:460px;">Your Organization Contact Number (Landline / Mobile) will be added to the end of some system messages (Welcome, Help, and Opt-in). This will help reduce the chances of your messages from being flagged as spam.</span></span></div>
+              <div style="font-size:16px;font-weight:700;color:#2b3c54;margin-top:9px;padding-left:11px;">+1 5887123661</div>
+            </div>
+            <div>
+              <div style="display:flex;align-items:center;gap:7px;font-size:14px;color:#6d7d90;"><span style="width:4px;height:4px;border-radius:50%;background:#9aa7b5;flex:0 0 auto;"></span>Organization Mobile Number</div>
+              <div style="font-size:16px;font-weight:700;color:#2b3c54;margin-top:9px;padding-left:11px;">+82 01023135501</div>
+            </div>
+            <div>
+              <div style="display:flex;align-items:center;gap:7px;font-size:14px;color:#6d7d90;"><span style="width:4px;height:4px;border-radius:50%;background:#9aa7b5;flex:0 0 auto;"></span>Registered Trumpia Number</div>
+              <div style="display:flex;align-items:center;gap:10px;margin-top:9px;padding-left:11px;">
+                <span style="font-size:16px;font-weight:700;color:#2b3c54;white-space:nowrap;">(833) 216-7917</span>
+                <span style="display:inline-flex;align-items:center;gap:4px;height:22px;color:#1668E3;font-size:12px;font-weight:600;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>SMS</span>
+                <span style="display:inline-flex;align-items:center;gap:4px;height:22px;color:#0f7a37;font-size:12px;font-weight:600;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Voice</span>
+              </div>
+            </div>
+          </div>
+          <div style="padding:26px 40px;display:flex;flex-direction:column;gap:26px;">
+            <div>
+              <div style="display:flex;align-items:center;gap:7px;font-size:14px;color:#6d7d90;"><span style="width:4px;height:4px;border-radius:50%;background:#9aa7b5;flex:0 0 auto;"></span>Organization Email Address</div>
+              <div style="font-size:16px;font-weight:700;color:#2b3c54;margin-top:9px;padding-left:11px;">changsun.moon@mytrum.com</div>
+            </div>
+            <div>
+              <div style="display:flex;align-items:center;gap:7px;font-size:14px;color:#6d7d90;"><span style="width:4px;height:4px;border-radius:50%;background:#9aa7b5;flex:0 0 auto;"></span>Organization Address</div>
+              <div style="font-size:16px;font-weight:700;color:#2b3c54;margin-top:9px;padding-left:11px;line-height:1.7;">addresschange<br>citychange<br>provinceChange<br>12345<br>USA</div>
+            </div>
+            <div>
+              <div style="display:flex;align-items:center;gap:7px;font-size:14px;color:#6d7d90;"><span style="width:4px;height:4px;border-radius:50%;background:#9aa7b5;flex:0 0 auto;"></span>Time Zone</div>
+              <div style="font-size:16px;font-weight:700;color:#2b3c54;margin-top:9px;padding-left:11px;">GMT +13:00 - Tonga , Nuku'alofa</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Non-Shared Information -->
+      <div style="background:#fff;border:1px solid #e4e9ef;border-radius:6px;box-shadow:0 1px 3px rgba(22,35,58,.06);overflow:hidden;">
+        <div style="display:flex;align-items:baseline;gap:18px;padding:22px 30px;flex-wrap:wrap;border-bottom:1px solid #eef1f5;">
+          <h2 style="font-family:'Poppins',sans-serif;font-size:19px;font-weight:700;color:#16233a;margin:0;white-space:nowrap;">Non-Shared Information</h2>
+          <p style="margin:0;font-size:14px;color:#6d7d90;line-height:1.5;">Non-Shared Information will NOT be visible to your customers.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;">
+          <div style="padding:26px 40px;border-right:1px solid #eef1f5;">
+            <div>
+              <div style="display:flex;align-items:center;gap:7px;font-size:14px;color:#6d7d90;"><span style="width:4px;height:4px;border-radius:50%;background:#9aa7b5;flex:0 0 auto;"></span>Industry</div>
+              <div style="font-size:16px;font-weight:700;color:#2b3c54;margin-top:9px;padding-left:11px;">Tanning Salon</div>
+            </div>
+          </div>
+          <div style="padding:26px 40px;">
+            <div>
+              <div style="display:flex;align-items:center;gap:7px;font-size:14px;color:#6d7d90;"><span style="width:4px;height:4px;border-radius:50%;background:#9aa7b5;flex:0 0 auto;"></span>Organization Website</div>
+              <div style="font-size:16px;font-weight:700;color:#2b3c54;margin-top:9px;padding-left:11px;">https://trumpia.com</div>
+            </div>
+          </div>
+        </div>
+        <div style="padding:12px 30px;border-top:1px solid #eef1f5;background:#f6f8fa;font-size:12px;color:#6d7d90;">To cancel our service, please click <a href="#" style="color:#1668E3;text-decoration:underline;">here</a></div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isPlaceholder }}" hint-placeholder-val="{{ false }}">
+      <div style="background:#fff;border:1px solid #e4e9ef;border-radius:6px;box-shadow:0 1px 3px rgba(22,35,58,.06);padding:80px 20px;text-align:center;">
+        <div style="width:52px;height:52px;border-radius:14px;background:#eef1f5;display:grid;place-items:center;margin:0 auto 16px;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#94a2b3" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+        <h3 style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;color:#16233a;margin:0 0 6px;">{{ pageTitle }}</h3>
+        <p style="margin:0;font-size:14px;color:#6d7d90;">This section isn't part of this prototype.</p>
+      </div>
+    </sc-if>
+  </div>
+
+  <!-- Add modal -->
+  <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;background:rgba(22,35,58,.45);backdrop-filter:blur(2px);display:flex;justify-content:flex-end;align-items:stretch;z-index:100;animation:{{ overlayAnim }};">
+      <div onClick="{{ stop }}" style="background:#fff;box-shadow:-12px 0 40px rgba(22,35,58,.22);width:100%;max-width:496px;height:100vh;display:flex;flex-direction:column;overflow:auto;animation:{{ drawerAnim }};">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:24px 26px 0;">
+          <h2 style="font-family:'Poppins',sans-serif;font-size:21px;font-weight:700;color:#16233a;margin:0;letter-spacing:-.01em;">{{ modalTitle }}</h2>
+        </div>
+        <p style="margin:12px 26px 0;font-size:14px;color:#51606f;line-height:1.5;background:#f6f8fa;border-radius:6px;padding:10px 12px;">{{ modalDesc }}</p>
+        <div style="padding:16px 26px 6px;flex:1;">
+          <sc-if value="{{ isPhoneModal }}" hint-placeholder-val="{{ false }}">
+            <label style="display:block;font-size:13px;font-weight:600;color:#16233a;margin-bottom:8px;">Phone Number <span style="color:#e0463b;">*</span></label>
+            <div style="display:flex;gap:10px;">
+              <div style="position:relative;width:98px;flex:0 0 auto;">
+                <select value="{{ country }}" onChange="{{ onCountry }}" style="width:100%;height:42px;appearance:none;padding:0 30px 0 12px;border:1px solid #d6dde6;border-radius:6px;background:#fff;font-family:inherit;font-size:14px;color:#16233a;cursor:pointer;outline:none;{{ inputDim }}">
+                  <option>Canada</option><option>USA</option>
+                </select>
+                <svg style="position:absolute;right:9px;top:50%;transform:translateY(-50%);pointer-events:none;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6d7d90" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+              </div>
+              <span style="flex:0 0 auto;display:inline-flex;align-items:center;height:42px;font-size:14px;font-weight:600;color:#16233a;">{{ countryCode }}</span>
+              <input value="{{ field }}" onInput="{{ onField }}" placeholder="(555) 123-4567" inputmode="tel" style="flex:1;min-width:0;height:42px;padding:0 13px;border:1px solid {{ fieldBorder }};border-radius:6px;font-family:inherit;font-size:14px;color:#16233a;outline:none;{{ inputDim }}">
+              <button onClick="{{ onCall }}" style="flex:0 0 auto;height:42px;padding:0 20px;border:1px solid #1668E3;background:#1668E3;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;color:#fff;cursor:pointer;white-space:nowrap;{{ inputDim }}">Call This Number</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ isEmailModal }}" hint-placeholder-val="{{ false }}">
+            <label style="display:block;font-size:13px;font-weight:600;color:#16233a;margin-bottom:8px;">Email Address <span style="color:#e0463b;">*</span></label>
+            <input value="{{ field }}" onInput="{{ onField }}" placeholder="name@company.com" inputmode="email" style="width:100%;height:42px;padding:0 13px;border:1px solid {{ fieldBorder }};border-radius:6px;font-family:inherit;font-size:14px;color:#16233a;outline:none;">
+          </sc-if>
+          <sc-if value="{{ isMobileModal }}" hint-placeholder-val="{{ false }}">
+            <label style="display:block;font-size:13px;font-weight:600;color:#16233a;margin-bottom:8px;">Mobile Number <span style="color:#e0463b;">*</span></label>
+            <input value="{{ field }}" onInput="{{ onField }}" placeholder="7146845111" inputmode="tel" style="width:100%;height:42px;padding:0 13px;border:1px solid {{ fieldBorder }};border-radius:6px;font-family:inherit;font-size:14px;color:#16233a;outline:none;">
+          </sc-if>
+          <div style="{{ errStyle }}">{{ errText }}</div>
+          <p style="margin:12px 0 0;font-size:13px;color:#51606f;line-height:1.65;">{{ modalHint }}</p>
+          <sc-if value="{{ calling }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top:18px;padding:15px 16px;background:#fff;border:1px solid #c5d6f3;border-radius:8px;">
+              <sc-if value="{{ callActive }}" hint-placeholder-val="{{ true }}">
+              <div onClick="{{ disconnectCall }}" style="display:flex;align-items:center;gap:13px;cursor:pointer;">
+                <div style="min-width:0;flex:1;">
+                  <div style="font-size:15px;font-weight:700;color:#16233a;">{{ callingNumber }}</div>
+                  <div style="display:flex;align-items:center;gap:7px;font-size:14px;font-weight:600;color:#16233a;margin-top:16px;"><span style="color:#1668E3;display:inline-flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform-origin:center;animation:ring 1.4s ease-in-out infinite;"><path d="M14.05 2a9 9 0 0 1 8 7.94"/><path d="M14.05 6A5 5 0 0 1 18 10"/><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>Calling…<button onClick="{{ cancelCall }}" style="flex:0 0 auto;height:30px;padding:0 16px;border:1px solid #c5d6f3;background:#fff;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;color:#1668E3;cursor:pointer;">Cancel</button></div>
+                  <div style="font-size:13px;color:#51606f;margin-top:16px;">Answer the call and follow the prompts to verify this number.</div>
+                </div>
+              </div>
+              </sc-if>
+              <sc-if value="{{ callEnded }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:center;gap:13px;">
+                <div style="min-width:0;flex:1;">
+                  <div style="display:flex;align-items:center;gap:12px;"><span style="font-size:15px;font-weight:700;color:#16233a;">{{ callingNumber }}</span><button onClick="{{ cancelCall }}" style="flex:0 0 auto;height:30px;padding:0 16px;border:1px solid #c5d6f3;background:#fff;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;color:#1668E3;cursor:pointer;">Change Phone Number</button></div>
+                  <div style="display:flex;align-items:center;gap:7px;font-size:14px;font-weight:600;color:#b3271c;margin-top:16px;"><span style="display:inline-flex;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-3.33-2.67m-2.67-3.34A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91"/><path d="m2 2 20 20"/></svg></span>Call Ended<button onClick="{{ callAgain }}" style="flex:0 0 auto;height:30px;padding:0 16px;border:none;background:#1668E3;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;color:#fff;cursor:pointer;">Call Again</button></div>
+                  <div style="font-size:13px;color:#51606f;margin-top:16px;">The call has ended. If you didn't receive or enter the code, you can call this number again.</div>
+                </div>
+              </div>
+              </sc-if>
+              <sc-if value="{{ verifiedOk }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:flex-start;gap:13px;">
+                <span style="flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:#e7f8ef;color:#0f7a37;display:grid;place-items:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                <div style="min-width:0;flex:1;">
+                  <div style="font-size:15px;font-weight:700;color:#0f7a37;">Phone number registered successfully</div>
+                  <div style="font-size:15px;font-weight:700;color:#16233a;margin-top:6px;">{{ callingNumber }}</div>
+                  <div style="font-size:13px;color:#51606f;margin-top:8px;">This number is now verified and available to use as your Caller ID.</div>
+                </div>
+              </div>
+              </sc-if>
+              <sc-if value="{{ showCode }}" hint-placeholder-val="{{ true }}">
+              <div style="margin-top:14px;padding-top:14px;border-top:1px solid #c5d6f3;">
+                <label style="display:block;font-size:13px;font-weight:600;color:#16233a;margin-bottom:8px;">Please Enter Verification Code <span style="color:#e0463b;">*</span></label>
+                <div style="display:flex;gap:10px;">
+                  <input value="{{ code }}" onInput="{{ onCode }}" placeholder="Enter the 6-digit code" inputmode="numeric" style="flex:1;min-width:0;height:42px;padding:0 13px;border:1px solid {{ codeBorder }};border-radius:6px;background:#fff;font-family:inherit;font-size:14px;letter-spacing:.12em;color:#16233a;outline:none;">
+                  <button onClick="{{ onVerify }}" style="flex:0 0 auto;height:42px;padding:0 22px;border:none;background:#1668E3;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;color:#fff;cursor:pointer;">Verify</button>
+                </div>
+                <div style="{{ codeErrStyle }}">{{ codeErr }}</div>
+              </div>
+              </sc-if>
+            </div>
+          </sc-if>
+        </div>
+        <div style="display:flex;justify-content:flex-end;gap:10px;padding:22px 26px 24px;">
+          <button onClick="{{ closeAdd }}" style="height:40px;padding:0 22px;border:1px solid #d6dde6;background:#fff;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;color:#1668E3;cursor:pointer;">Close</button>
+          <sc-if value="{{ showSubmit }}" hint-placeholder-val="{{ true }}">
+            <button onClick="{{ submitAdd }}" style="height:40px;padding:0 22px;border:none;background:#1668E3;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;color:#fff;cursor:pointer;">{{ submitLabel }}</button>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- Confirm alert -->
+  <sc-if value="{{ confirmOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ confirmCancel }}" style="position:fixed;inset:0;background:rgba(22,35,58,.5);display:grid;place-items:center;z-index:120;padding:24px;animation:ovfade .15s ease;">
+      <div onClick="{{ stop }}" style="background:#fff;border-radius:12px;box-shadow:0 24px 60px rgba(22,35,58,.3);width:100%;max-width:400px;overflow:hidden;animation:modpop .22s cubic-bezier(.2,.8,.2,1);">
+        <div style="padding:24px 26px 20px;">
+          <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px;">
+            <h2 style="margin:0;font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;color:#16233a;">Alert</h2>
+          </div>
+          <p style="margin:0;font-size:15px;color:#2b3c54;line-height:1.6;">It costs 3 text credits to verify the Caller ID.<br>Would you like to continue?</p>
+        </div>
+        <div style="display:flex;justify-content:flex-end;gap:10px;padding:0 26px 24px;">
+          <button onClick="{{ confirmCancel }}" style="height:40px;padding:0 22px;border:1px solid #d6dde6;background:#fff;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;color:#1668E3;cursor:pointer;">Cancel</button>
+          <button onClick="{{ confirmOk }}" style="height:40px;padding:0 26px;border:none;background:#1668E3;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;color:#fff;cursor:pointer;">OK</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- Toasts -->
+  <div style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:200;display:flex;flex-direction:column;gap:10px;align-items:center;">
+    <sc-for list="{{ toasts }}" as="t" hint-placeholder-count="0">
+      <div style="display:flex;align-items:center;gap:11px;background:#16233a;color:#fff;padding:12px 18px;border-radius:8px;box-shadow:0 10px 30px rgba(22,35,58,.3);font-size:14px;font-weight:500;animation:toastup .3s cubic-bezier(.2,.8,.2,1);">
+        <span style="color:{{ t.iconColor }};line-height:0;">{{ t.icon }}</span>{{ t.text }}
+      </div>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1480,&quot;height&quot;:820}}">
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.state = {
+      tab: 'verified',
+      q: '',
+      sel: { verified: {}, caller: {}, mobile: {} },
+      def: { verified: 1, caller: 11, mobile: 201 },
+      mq: '',
+      emails: [
+        { id:1, primary:'changsun.moon@mytrum.com', status:'Verified', updatedBy:'cs.moon', dateAdded:'May 14, 2025' },
+        { id:2, primary:'dslkjfsalkfi@ggmail.com', status:'Pending', updatedBy:'cs.moon', dateAdded:'Jun 17, 2026' },
+        { id:3, primary:'changsun.moon+898@mytrum.com', status:'Verified', updatedBy:'cs.moon', dateAdded:'Aug 25, 2025' },
+      ],
+      phones: [
+        { id:11, primary:'+1 (415) 555-0182', status:'Verified', updatedBy:'cs.moon', dateAdded:'Apr 02, 2025' },
+        { id:12, primary:'+1 (213) 555-0114', status:'Verified', updatedBy:'cs.moon', dateAdded:'Jun 10, 2026' },
+        { id:13, primary:'+1 (646) 555-0143', status:'Verified', updatedBy:'cs.moon', dateAdded:'Jul 19, 2025' },
+      ],
+      mobiles: [
+        { id:201, primary:'7146845111', status:'Verified', updatedBy:'cs.moon', dateAdded:'Aug 14, 2025' },
+        { id:202, primary:'5248648446', status:'Pending', updatedBy:'cs.moon', dateAdded:'Jun 18, 2026' },
+        { id:203, primary:'3102183499', status:'Pending', updatedBy:'cs.moon', dateAdded:'Sep 15, 2025' },
+      ],
+      modal: null,        // 'verified' | 'caller' | 'mobile' | null
+      closing: false,
+      country: 'USA',
+      field: '',
+      err: '',
+      toasts: [],
+      colW: { primary: 300, status: 200, updated: 220, date: 220, mprimary: 300, mstatus: 200, mupdated: 220, mdate: 220, pprimary: 300, pstatus: 200, pupdated: 220, pdate: 220 },
+      _nextId: 100,
+    };
+    this.headRef = (el) => { if (el) el.indeterminate = this._someChecked; };
+    this.mobHeadRef = (el) => { if (el) el.indeterminate = this._mobSome; };
+    this.phoneHeadRef = (el) => { if (el) el.indeterminate = this._phoneSome; };
+  }
+
+  today(){
+    return new Date().toLocaleDateString('en-US', { month:'short', day:'2-digit', year:'numeric' });
+  }
+  fmtPhone(d){
+    const x = d.replace(/\D/g,'').slice(0,10);
+    if (x.length < 4) return x;
+    if (x.length < 7) return `(${x.slice(0,3)}) ${x.slice(3)}`;
+    return `(${x.slice(0,3)}) ${x.slice(3,6)}-${x.slice(6)}`;
+  }
+
+  toast(text, kind){
+    const id = Math.random();
+    const ok = kind !== 'del';
+    const icon = ok
+      ? React.createElement('svg',{width:18,height:18,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:2,strokeLinecap:'round',strokeLinejoin:'round'},React.createElement('path',{d:'M20 6 9 17l-5-5'}))
+      : React.createElement('svg',{width:18,height:18,viewBox:'0 0 24 24',fill:'none',stroke:'currentColor',strokeWidth:2,strokeLinecap:'round',strokeLinejoin:'round'},React.createElement('path',{d:'M3 6h18'}),React.createElement('path',{d:'M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6'}));
+    this.setState(s => ({ toasts: [...s.toasts, { id, text, icon, iconColor: ok ? '#54cc9d' : '#ff8e84' }] }));
+    setTimeout(() => this.setState(s => ({ toasts: s.toasts.filter(t => t.id !== id) })), 2800);
+  }
+
+  startResize(key, e){
+    e.preventDefault(); e.stopPropagation();
+    const startX = e.clientX;
+    const startW = this.state.colW[key];
+    const move = (ev) => {
+      const w = Math.max(90, startW + (ev.clientX - startX));
+      this.setState(s => ({ colW: { ...s.colW, [key]: w } }));
+    };
+    const up = () => {
+      window.removeEventListener('mousemove', move);
+      window.removeEventListener('mouseup', up);
+      document.body.style.cursor = ''; document.body.style.userSelect = '';
+    };
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', up);
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+  }
+  curKey(){ return this.state.tab === 'caller' ? 'caller' : 'verified'; }
+  curList(){ return this.curKey() === 'caller' ? this.state.phones : this.state.emails; }
+
+  filtered(){
+    const q = this.state.q.trim().toLowerCase();
+    const list = this.curList();
+    if (!q) return list;
+    return list.filter(r => r.primary.toLowerCase().includes(q));
+  }
+
+  toggleOne(id){
+    const k = this.curKey();
+    this.setState(s => {
+      const m = { ...s.sel[k] };
+      if (m[id]) delete m[id]; else m[id] = true;
+      return { sel: { ...s.sel, [k]: m } };
+    });
+  }
+  toggleAll(){
+    const k = this.curKey();
+    const rows = this.filtered();
+    const all = rows.length > 0 && rows.every(r => this.state.sel[k][r.id]);
+    this.setState(s => {
+      const m = { ...s.sel[k] };
+      if (all) rows.forEach(r => delete m[r.id]);
+      else rows.forEach(r => m[r.id] = true);
+      return { sel: { ...s.sel, [k]: m } };
+    });
+  }
+  setDefault(id){
+    const k = this.curKey();
+    this.setState(s => ({ def: { ...s.def, [k]: s.def[k] === id ? null : id } }));
+  }
+  selIds(){
+    const k = this.curKey();
+    return Object.keys(this.state.sel[k]).filter(id => this.state.sel[k][id]);
+  }
+  doDelete(){
+    const ids = this.selIds().map(Number);
+    if (!ids.length){ this.toast('Select rows first','del'); return; }
+    const k = this.curKey();
+    const listKey = k === 'caller' ? 'phones' : 'emails';
+    this.setState(s => ({
+      [listKey]: s[listKey].filter(r => !ids.includes(r.id)),
+      sel: { ...s.sel, [k]: {} },
+    }));
+    this.toast(`${ids.length} ${k === 'caller' ? 'number' : 'email'}${ids.length>1?'s':''} deleted`,'del');
+  }
+  doResend(){
+    if (!this.selIds().length){ this.toast('Select rows first','del'); return; }
+    this.toast(`Verification ${this.curKey()==='caller'?'call/SMS':'email'} resent`);
+  }
+
+  filteredMobiles(){
+    const q = this.state.mq.trim().toLowerCase();
+    const list = this.state.mobiles;
+    return q ? list.filter(r => r.primary.toLowerCase().includes(q)) : list;
+  }
+  toggleMobile(id){
+    this.setState(s => {
+      const m = { ...s.sel.mobile };
+      if (m[id]) delete m[id]; else m[id] = true;
+      return { sel: { ...s.sel, mobile: m } };
+    });
+  }
+  toggleAllMobile(){
+    const rows = this.filteredMobiles();
+    const all = rows.length > 0 && rows.every(r => this.state.sel.mobile[r.id]);
+    this.setState(s => {
+      const m = { ...s.sel.mobile };
+      if (all) rows.forEach(r => delete m[r.id]); else rows.forEach(r => m[r.id] = true);
+      return { sel: { ...s.sel, mobile: m } };
+    });
+  }
+  setMobileDefault(id){
+    this.setState(s => ({ def: { ...s.def, mobile: s.def.mobile === id ? null : id } }));
+  }
+  mobileSelIds(){
+    return Object.keys(this.state.sel.mobile).filter(id => this.state.sel.mobile[id]);
+  }
+  deleteMobiles(){
+    const ids = this.mobileSelIds().map(Number);
+    if (!ids.length){ this.toast('Select rows first','del'); return; }
+    this.setState(s => ({ mobiles: s.mobiles.filter(r => !ids.includes(r.id)), sel: { ...s.sel, mobile: {} } }));
+    this.toast(`${ids.length} mobile number${ids.length>1?'s':''} deleted`,'del');
+  }
+  filteredPhones(){
+    const q = (this.state.pq||'').trim().toLowerCase();
+    const list = this.state.phones;
+    return q ? list.filter(r => r.primary.toLowerCase().includes(q)) : list;
+  }
+  togglePhone(id){
+    this.setState(s => {
+      const m = { ...s.sel.caller };
+      if (m[id]) delete m[id]; else m[id] = true;
+      return { sel: { ...s.sel, caller: m } };
+    });
+  }
+  toggleAllPhone(){
+    const rows = this.filteredPhones();
+    const all = rows.length > 0 && rows.every(r => this.state.sel.caller[r.id]);
+    this.setState(s => {
+      const m = { ...s.sel.caller };
+      if (all) rows.forEach(r => delete m[r.id]); else rows.forEach(r => m[r.id] = true);
+      return { sel: { ...s.sel, caller: m } };
+    });
+  }
+  setPhoneDefault(id){
+    this.setState(s => ({ def: { ...s.def, caller: s.def.caller === id ? null : id } }));
+  }
+  phoneSelIds(){
+    return Object.keys(this.state.sel.caller).filter(id => this.state.sel.caller[id]);
+  }
+  deletePhones(){
+    const ids = this.phoneSelIds().map(Number);
+    if (!ids.length){ this.toast('Select rows first','del'); return; }
+    this.setState(s => ({ phones: s.phones.filter(r => !ids.includes(r.id)), sel: { ...s.sel, caller: {} } }));
+    this.toast(`${ids.length} number${ids.length>1?'s':''} deleted`,'del');
+  }
+  startCallTimer(){
+    clearTimeout(this._callTimer);
+    this._callTimer = setTimeout(() => { if (this.state.calling) this.setState({ ended: true }); }, 8000);
+  }
+  openAdd(kind){ clearTimeout(this._callTimer); this.setState({ modal: kind || this.curKey(), field:'', err:'', country:'USA', closing:false, calling:null, confirmOpen:false, code:'', codeErr:'', ended:false, verified:false }); }
+  closeAdd(){
+    if (this.state.closing) return;
+    this.setState({ closing: true });
+    setTimeout(() => this.setState({ modal: null, closing: false }), 500);
+  }
+  submitAdd(){
+    const k = this.state.modal;
+    const v = this.state.field.trim();
+    if (k === 'caller'){
+      const digits = v.replace(/\D/g,'');
+      if (digits.length < 10){ this.setState({ err:'Enter a valid 10-digit phone number.' }); return; }
+      const cc = '+1';
+      const row = { id: this.state._nextId, primary:`${cc} ${this.fmtPhone(digits)}`, status:'Pending', updatedBy:'cs.moon', dateAdded:this.today() };
+      this.setState(s => ({ phones:[...s.phones,row], _nextId:s._nextId+1 }));
+      this.closeAdd();
+      this.toast('Phone number added — verification pending');
+    } else if (k === 'mobile'){
+      const digits = v.replace(/\D/g,'');
+      if (!digits){ this.setState({ err:'This is required.' }); return; }
+      if (digits.length < 10){ this.setState({ err:'Enter a valid 10-digit mobile number.' }); return; }
+      const row = { id: this.state._nextId, primary:digits, status:'Pending', updatedBy:'cs.moon', dateAdded:this.today() };
+      this.setState(s => ({ mobiles:[...s.mobiles,row], _nextId:s._nextId+1 }));
+      this.closeAdd();
+      this.toast('Verification SMS sent');
+    } else {
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)){ this.setState({ err:'Enter a valid email address.' }); return; }
+      const row = { id: this.state._nextId, primary:v, status:'Pending', updatedBy:'cs.moon', dateAdded:this.today() };
+      this.setState(s => ({ emails:[...s.emails,row], _nextId:s._nextId+1 }));
+      this.closeAdd();
+      this.toast('Verification email sent');
+    }
+  }
+
+  renderVals(){
+    const TABS = [
+      { id:'plan', label:'Plan Information' },
+      { id:'org', label:'Organization Profile' },
+      { id:'security', label:'Security Settings' },
+      { id:'api', label:'API Settings' },
+      { id:'notif', label:'Notifications' },
+      { id:'verified', label:'Verify Email, SMS, Voice' },
+    ];
+    const active = this.state.tab;
+    const tabs = TABS.map((t, i) => {
+      const on = t.id === active;
+      const base = `padding:14px 22px;font-size:15px;cursor:pointer;white-space:nowrap;text-align:left;transition:color .15s;border-top:2px solid ${on?'#1668E3':'transparent'};border-right:1px solid #eef1f5;${i===0?'border-left:1px solid #eef1f5;':''}`;
+      const style = on
+        ? `${base}color:#1668E3;font-weight:600;background:#eef1f5;margin-bottom:-1px;border-bottom:1px solid #eef1f5;`
+        : `${base}color:#16233a;font-weight:500;background:#fff;`;
+      return { id:t.id, label:t.label, style, onClick: () => this.setState({ tab: t.id, q:'' }) };
+    });
+
+    const k = this.curKey();
+    const isTableView = active === 'verified' || active === 'caller';
+    const isCaller = active === 'caller';
+    const rowsRaw = [...this.filtered()].sort((a,b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+    const selMap = this.state.sel[k];
+    const allChecked = rowsRaw.length > 0 && rowsRaw.every(r => selMap[r.id]);
+    this._someChecked = rowsRaw.some(r => selMap[r.id]) && !allChecked;
+    const hasSel = this.selIds().length > 0;
+
+    const rows = rowsRaw.map(r => {
+      const isDef = this.state.def[k] === r.id;
+      const selected = !!selMap[r.id];
+      return {
+        ...r,
+        selected,
+        rowCls: selected ? 'row-hl row-sel' : 'row-hl',
+        statusColor: r.status === 'Verified' ? '#0f7a37' : '#b97608',
+        rowStyle: `display:flex;align-items:center;border-bottom:1px solid #eef1f5;transition:background .15s;width:max-content;min-width:100%;background:${selected?'#eef5ff':'#fff'};`,
+        trackBg: isDef ? '#1668E3' : '#d6dde6',
+        knobTf: isDef ? 'translateX(17px)' : 'translateX(0)',
+        onSelect: () => this.toggleOne(r.id),
+        onToggleDefault: () => this.setDefault(r.id),
+      };
+    });
+
+    const pageTitle = isCaller ? 'Voice Settings'
+      : active === 'verified' ? 'Verified Email & Mobile'
+      : TABS.find(t => t.id === active).label;
+
+    return {
+      tabs,
+      pageTitle,
+      isTableView,
+      isVerified: active === 'verified',
+      isOrg: active === 'org',
+      isPlaceholder: !isTableView && active !== 'org',
+      cardTitle: isCaller ? 'Voice Caller ID' : 'Email Addresses',
+      cardDesc: isCaller
+        ? 'To send a voice message, you must set a caller ID. All calls will be made from this number.'
+        : 'In order to use your email address, you need to verify it first. Once verified, it can be used in sending emails, workflow alert emails, etc.',
+      listLabel: isCaller ? 'Caller ID List' : 'Email Address List',
+      firstColLabel: isCaller ? 'Phone Number' : 'Email Address',
+      resendLabel: isCaller ? 'Resend Verification' : 'Resend Verification Email',
+      rows,
+      wPrimary: this.state.colW.primary + 'px',
+      wStatus: this.state.colW.status + 'px',
+      wUpdated: this.state.colW.updated + 'px',
+      wDate: this.state.colW.date + 'px',
+      rz: {
+        primary: (e) => this.startResize('primary', e),
+        status: (e) => this.startResize('status', e),
+        updated: (e) => this.startResize('updated', e),
+        date: (e) => this.startResize('date', e),
+      },
+      selCount: this.selIds().length,
+      actionColor: hasSel ? '#16233a' : '#b9c3cf',
+      allChecked,
+      headRef: this.headRef,
+      onToggleAll: () => this.toggleAll(),
+      onResend: () => this.doResend(),
+      onDelete: () => this.doDelete(),
+      query: this.state.q,
+      onQuery: (e) => this.setState({ q: e.target.value }),
+      openAdd: () => this.openAdd(),
+
+      modalOpen: !!this.state.modal,
+      drawerAnim: this.state.closing ? 'drawerout .5s cubic-bezier(.2,.8,.2,1) forwards' : 'drawerin .5s cubic-bezier(.2,.8,.2,1)',
+      overlayAnim: this.state.closing ? 'none' : 'ovfade .18s ease',
+      isPhoneModal: this.state.modal === 'caller',
+      isEmailModal: this.state.modal === 'verified',
+      isMobileModal: this.state.modal === 'mobile',
+      modalTitle: this.state.modal === 'caller' ? 'Add a Caller ID'
+        : this.state.modal === 'mobile' ? 'Add Mobile Number'
+        : 'Add Email Address',
+      modalDesc: this.state.modal === 'caller'
+        ? 'Add a phone number to register as a Caller ID.'
+        : this.state.modal === 'mobile'
+        ? 'Add a mobile number to verify and use.'
+        : 'Add an email address to verify and use.',
+      modalHint: this.state.modal === 'caller'
+        ? 'We’ll call this phone number to verify that you own it. This number will be displayed as your Caller ID information.'
+        : this.state.modal === 'mobile'
+        ? 'A verification SMS will be sent to this number. It stays Pending until verified.'
+        : 'A verification link will be sent to this address. It stays Pending until verified.',
+      submitLabel: this.state.modal === 'caller' ? 'Send & Add' : 'Send Verification',
+      showSubmit: this.state.modal === 'verified' || this.state.modal === 'mobile',
+      country: this.state.country,
+      countryCode: { Canada:'+1', USA:'+1' }[this.state.country] || '+1',
+      onCountry: (e) => this.setState({ country: e.target.value }),
+      onCall: () => {
+        const digits = this.state.field.replace(/\D/g,'');
+        if (!digits){ this.setState({ err:'This is required.' }); return; }
+        if (digits.length < 10){ this.setState({ err:'Enter a valid 10-digit phone number.' }); return; }
+        this.setState({ confirmOpen: true });
+      },
+      confirmOpen: !!this.state.confirmOpen,
+      confirmCancel: () => this.setState({ confirmOpen: false }),
+      confirmOk: () => {
+        const digits = this.state.field.replace(/\D/g,'');
+        this.setState({ confirmOpen: false, calling: `+1 ${this.fmtPhone(digits)}`, ended: false });
+        this.startCallTimer();
+      },
+      calling: this.state.calling,
+      callingNumber: this.state.calling,
+      callActive: !!this.state.calling && !this.state.ended && !this.state.verified,
+      callEnded: !!this.state.calling && !!this.state.ended && !this.state.verified,
+      verifiedOk: !!this.state.calling && !!this.state.verified,
+      showCode: !!this.state.calling && !this.state.verified,
+      callAgain: () => { this.setState({ ended: false, code:'', codeErr:'' }); this.startCallTimer(); },
+      disconnectCall: () => { clearTimeout(this._callTimer); this.setState({ ended: true }); },
+      inputDim: this.state.calling ? 'background:#f1f3f6;color:#aab4c0;border-color:#e4e9ef;pointer-events:none;cursor:not-allowed;' : '',
+      cancelCall: () => { clearTimeout(this._callTimer); this.setState({ calling: null, code:'', codeErr:'', ended:false, verified:false }); },
+      code: this.state.code || '',
+      onCode: (e) => this.setState({ code: e.target.value.replace(/\D/g,'').slice(0,6), codeErr:'' }),
+      codeBorder: this.state.codeErr ? '#e0463b' : '#d6dde6',
+      codeErr: this.state.codeErr || '',
+      codeErrStyle: this.state.codeErr ? 'font-size:12px;color:#b3271c;margin-top:8px;' : 'display:none;',
+      onVerify: () => {
+        const code = (this.state.code || '');
+        if (!code){ this.setState({ codeErr:'This is required.' }); return; }
+        if (code !== '123456'){ this.setState({ codeErr:'Verification Code is incorrect, please retry.' }); return; }
+        const digits = this.state.field.replace(/\D/g,'');
+        const row = { id: this.state._nextId, primary:`+1 ${this.fmtPhone(digits)}`, status:'Verified', updatedBy:'cs.moon', dateAdded:this.today() };
+        clearTimeout(this._callTimer);
+        this.setState(s => ({ phones:[...s.phones,row], _nextId:s._nextId+1, verified:true, ended:false, codeErr:'' }));
+        this.toast('Caller ID verified and added');
+      },
+      field: this.state.field,
+      onField: (e) => {
+        let v = e.target.value;
+        if (this.state.modal === 'caller') v = this.fmtPhone(v);
+        else if (this.state.modal === 'mobile') v = v.replace(/\D/g,'').slice(0,15);
+        this.setState({ field: v, err:'' });
+      },
+      fieldBorder: this.state.err ? '#e0463b' : '#d6dde6',
+      errText: this.state.err,
+      errStyle: this.state.err ? 'font-size:12px;color:#b3271c;margin-top:8px;' : 'display:none;',
+      closeAdd: () => this.closeAdd(),
+      submitAdd: () => this.submitAdd(),
+      stop: (e) => e.stopPropagation(),
+
+      toasts: this.state.toasts,
+      ...this.mobileVals(),
+      ...this.phoneVals(),
+    };
+  }
+
+  phoneVals(){
+    const rowsRaw = [...this.filteredPhones()].sort((a,b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+    const selMap = this.state.sel.caller;
+    const allChecked = rowsRaw.length > 0 && rowsRaw.every(r => selMap[r.id]);
+    this._phoneSome = rowsRaw.some(r => selMap[r.id]) && !allChecked;
+    const hasSel = this.phoneSelIds().length > 0;
+    const rows = rowsRaw.map(r => {
+      const isDef = this.state.def.caller === r.id;
+      const selected = !!selMap[r.id];
+      return {
+        ...r,
+        selected,
+        rowCls: selected ? 'row-hl row-sel' : 'row-hl',
+        statusColor: r.status === 'Verified' ? '#0f7a37' : '#b97608',
+        rowStyle: `display:flex;align-items:center;border-bottom:1px solid #eef1f5;transition:background .15s;width:max-content;min-width:100%;background:${selected?'#eef5ff':'#fff'};`,
+        trackBg: isDef ? '#1668E3' : '#d6dde6',
+        knobTf: isDef ? 'translateX(17px)' : 'translateX(0)',
+        onSelect: () => this.togglePhone(r.id),
+        onToggleDefault: () => this.setPhoneDefault(r.id),
+      };
+    });
+    return {
+      phRows: rows,
+      phSelCount: this.phoneSelIds().length,
+      phActionColor: hasSel ? '#16233a' : '#b9c3cf',
+      phAllChecked: allChecked,
+      phHeadRef: this.phoneHeadRef,
+      phToggleAll: () => this.toggleAllPhone(),
+      phDelete: () => this.deletePhones(),
+      phQuery: this.state.pq || '',
+      phOnQuery: (e) => this.setState({ pq: e.target.value }),
+      phOpenAdd: () => this.openAdd('caller'),
+      pwPrimary: this.state.colW.pprimary + 'px',
+      pwStatus: this.state.colW.pstatus + 'px',
+      pwUpdated: this.state.colW.pupdated + 'px',
+      pwDate: this.state.colW.pdate + 'px',
+      prz: {
+        primary: (e) => this.startResize('pprimary', e),
+        status: (e) => this.startResize('pstatus', e),
+        updated: (e) => this.startResize('pupdated', e),
+        date: (e) => this.startResize('pdate', e),
+      },
+    };
+  }
+
+  mobileVals(){
+    const rowsRaw = [...this.filteredMobiles()].sort((a,b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+    const selMap = this.state.sel.mobile;
+    const allChecked = rowsRaw.length > 0 && rowsRaw.every(r => selMap[r.id]);
+    this._mobSome = rowsRaw.some(r => selMap[r.id]) && !allChecked;
+    const hasSel = this.mobileSelIds().length > 0;
+    const rows = rowsRaw.map(r => {
+      const isDef = this.state.def.mobile === r.id;
+      const selected = !!selMap[r.id];
+      return {
+        ...r,
+        selected,
+        rowCls: selected ? 'row-hl row-sel' : 'row-hl',
+        statusColor: r.status === 'Verified' ? '#0f7a37' : '#b97608',
+        rowStyle: `display:flex;align-items:center;border-bottom:1px solid #eef1f5;transition:background .15s;width:max-content;min-width:100%;background:${selected?'#eef5ff':'#fff'};`,
+        trackBg: isDef ? '#1668E3' : '#d6dde6',
+        knobTf: isDef ? 'translateX(17px)' : 'translateX(0)',
+        onSelect: () => this.toggleMobile(r.id),
+        onToggleDefault: () => this.setMobileDefault(r.id),
+      };
+    });
+    return {
+      mobRows: rows,
+      mobSelCount: this.mobileSelIds().length,
+      mobActionColor: hasSel ? '#16233a' : '#b9c3cf',
+      mobAllChecked: allChecked,
+      mobHeadRef: this.mobHeadRef,
+      mobToggleAll: () => this.toggleAllMobile(),
+      mobDelete: () => this.deleteMobiles(),
+      mobQuery: this.state.mq,
+      mobOnQuery: (e) => this.setState({ mq: e.target.value }),
+      mobOpenAdd: () => this.openAdd('mobile'),
+      mwPrimary: this.state.colW.mprimary + 'px',
+      mwStatus: this.state.colW.mstatus + 'px',
+      mwUpdated: this.state.colW.mupdated + 'px',
+      mwDate: this.state.colW.mdate + 'px',
+      mrz: {
+        primary: (e) => this.startResize('mprimary', e),
+        status: (e) => this.startResize('mstatus', e),
+        updated: (e) => this.startResize('mupdated', e),
+        date: (e) => this.startResize('mdate', e),
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

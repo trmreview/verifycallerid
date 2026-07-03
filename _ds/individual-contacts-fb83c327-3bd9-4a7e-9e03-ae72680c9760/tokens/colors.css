@@ -1,0 +1,64 @@
+/* Trumpia — Color tokens
+   NOTE: brand accent is an ASSUMPTION pending the Figma style guide.
+   Everything keys off --brand-500, so correcting the hex re-themes the whole system. */
+:root {
+  /* Brand — Trumpia green (the wordmark "dot") */
+  --brand-50:  #e7f8f1;
+  --brand-100: #c4eedd;
+  --brand-200: #8fdebf;
+  --brand-300: #54cc9d;
+  --brand-400: #21bb80;
+  --brand-500: #00a86b;   /* primary */
+  --brand-600: #008f5a;
+  --brand-700: #00744a;
+  --brand-800: #045b3c;
+  --brand-900: #064a32;
+
+  /* Ink — deep navy-slate used for the wordmark + headings */
+  --ink-900: #16233a;
+  --ink-800: #1f3047;
+  --ink-700: #2b3c54;
+
+  /* Neutral / slate ramp */
+  --neutral-0:   #ffffff;
+  --neutral-25:  #fbfcfd;
+  --neutral-50:  #f6f8fa;
+  --neutral-100: #eef1f5;
+  --neutral-150: #e4e9ef;
+  --neutral-200: #d6dde6;
+  --neutral-300: #b9c3cf;
+  --neutral-400: #94a2b3;
+  --neutral-500: #6d7d90;
+  --neutral-600: #51606f;
+  --neutral-700: #3c4856;
+  --neutral-800: #283441;
+  --neutral-900: #18222e;
+
+  /* Semantic */
+  --success-50:  #e7f8ef;  --success-500: #16a34a;  --success-700: #0f7a37;
+  --warning-50:  #fff5e6;  --warning-500: #f59e0b;  --warning-700: #b97608;
+  --danger-50:   #fdeaea;  --danger-500:  #e0463b;  --danger-700:  #b3271c;
+  --info-50:     #e9f1fe;  --info-500:    #2f6fed;  --info-700:    #1c4fc0;
+
+  /* Semantic aliases */
+  --bg-app:        var(--neutral-50);
+  --surface-card:  var(--neutral-0);
+  --surface-sunken:var(--neutral-100);
+  --surface-inverse:var(--ink-900);
+
+  --text-strong:   var(--ink-900);
+  --text-body:     var(--neutral-700);
+  --text-muted:    var(--neutral-500);
+  --text-faint:    var(--neutral-400);
+  --text-on-brand: #ffffff;
+  --text-on-dark:  rgba(255,255,255,.92);
+
+  --border-subtle: var(--neutral-150);
+  --border-default:var(--neutral-200);
+  --border-strong: var(--neutral-300);
+
+  --accent:        var(--brand-500);
+  --accent-hover:  var(--brand-600);
+  --accent-tint:   var(--brand-50);
+  --focus-ring:    color-mix(in srgb, var(--brand-500) 45%, transparent);
+}
